@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Piano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+
+    body {
+    background-color: green;
+    }
+
+    .container {
+    width: max-content;
+        margin: auto;
+        text-align: center;
+        padding-top: 10%;
+    }
+
+    .white-keys kbd {
+    display: inline-block;
+    background-color: white;
+    border: 2px solid black;
+    width: 70px;
+    height: 200px;
+    line-height: 350px;
+        margin-left: -10px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 150%;
+    }
+
+    .black-keys kbd {
+    position: relative;
+        top: -203px;
+        left: -19px;
+    font-family: 'Poppins', sans-serif;
+
+    display: inline-block;
+    margin-left: 24px;
+
+    background-color: black;
+    width: 40px;
+    height: 120px;
+    color: white;
+        line-height: 180px;
+
+    }
+    #space {
+    margin-left: 92px;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="white-keys">
+            <kbd>A</kbd>
+            <kbd>S</kbd>
+            <kbd>D</kbd>
+            <kbd>F</kbd>
+            <kbd>G</kbd>
+            <kbd>H</kbd>
+            <kbd>J</kbd>
+    </div>
+
+    <div class="black-keys">
+        <kbd>W</kbd>
+        <kbd>E</kbd>
+        <kbd id="space">T</kbd>
+        <kbd>Y</kbd>
+        <kbd>U</kbd>
+    </div>
+</div>
+
+<script>
+    let pianoKeys = new Set('ASDFGHJWETYU');
+
+    document.addEventListener("keypress", function (e) {
+            if (pianoKeys.has(e.key.toUpperCase())) {
+                new Audio("E://musicProject/" + e.key.toUpperCase() + ".mp3").play();
+            }
+        }
+    );
+</script>
+
+</body>
+</html>
